@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct InnerView: View {
+    @Environment(\.customDismiss) var dismiss
+    @Environment(\.customIsPresented) var isInPresentation
+    
     var body: some View {
         VStack {
             Text("Personalized Spatial Audio")
@@ -32,7 +35,8 @@ struct InnerView: View {
             .foregroundStyle(.primary)
             .fontWeight(.medium)
             Button("Not Now") {
-                
+                print(isInPresentation)
+                dismiss()
             }
         }
         .padding()
@@ -56,7 +60,12 @@ struct ContentView: View {
             .frame(maxWidth: .infinity)
             .padding()
         }
-        .customSheet(isPresented: $isPresented) {
+        .customSheet(
+            isPresented: $isPresented,
+            onDismiss: {
+                print("Custom sheet dismissed")
+            }
+        ) {
             InnerView()
         }
     }

@@ -13,6 +13,7 @@
 		5A4F79EC2BBF90BF00D4E870 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A4F79EB2BBF90BF00D4E870 /* Preview Assets.xcassets */; };
 		5A4F79F32BC04EEE00D4E870 /* CustomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4F79F22BC04EEE00D4E870 /* CustomSheet.swift */; };
 		5A4F79F52BC04F2B00D4E870 /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4F79F42BC04F2B00D4E870 /* MathUtils.swift */; };
+		5A4F79F82BC09A4B00D4E870 /* EnvironmentValues+CustomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4F79F72BC09A4B00D4E870 /* EnvironmentValues+CustomSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		5A4F79F22BC04EEE00D4E870 /* CustomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSheet.swift; sourceTree = "<group>"; };
 		5A4F79F42BC04F2B00D4E870 /* MathUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathUtils.swift; sourceTree = "<group>"; };
 		5A4F79F62BC04F4200D4E870 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5A4F79F72BC09A4B00D4E870 /* EnvironmentValues+CustomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+CustomSheet.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		5A4F79E32BBF90BE00D4E870 /* SheetExploration */ = {
 			isa = PBXGroup;
 			children = (
+				5A4F79F72BC09A4B00D4E870 /* EnvironmentValues+CustomSheet.swift */,
 				5A4F79F22BC04EEE00D4E870 /* CustomSheet.swift */,
 				5A4F79E42BBF90BE00D4E870 /* SheetExplorationApp.swift */,
 				5A4F79E62BBF90BE00D4E870 /* ContentView.swift */,
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A4F79E72BBF90BE00D4E870 /* ContentView.swift in Sources */,
+				5A4F79F82BC09A4B00D4E870 /* EnvironmentValues+CustomSheet.swift in Sources */,
 				5A4F79F52BC04F2B00D4E870 /* MathUtils.swift in Sources */,
 				5A4F79E52BBF90BE00D4E870 /* SheetExplorationApp.swift in Sources */,
 				5A4F79F32BC04EEE00D4E870 /* CustomSheet.swift in Sources */,

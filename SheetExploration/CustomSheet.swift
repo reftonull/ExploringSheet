@@ -8,10 +8,17 @@
 import SwiftUI
 
 struct CustomSheet<SheetContent: View>: ViewModifier {
-    @Binding var isPresented: Bool
     @State var offset: CGFloat = 0
     
+    @Binding var isPresented: Bool
+    var dismiss: (() -> Void)?
     @ViewBuilder var sheetContent: () -> SheetContent
+    
+    init(isPresented: Binding<Bool>, onDismiss dismiss: (() -> Void)? = nil, sheetContent: @escaping () -> SheetContent) {
+        self._isPresented = isPresented
+        self.dismiss = dismiss
+        self.sheetContent = sheetContent
+    }
     
     func body(content: Content) -> some View {
         ZStack(alignment: .bottom) {
@@ -45,21 +52,30 @@ struct CustomSheet<SheetContent: View>: ViewModifier {
                     .offset(y: offset)
                     .animation(.spring, value: offset)
                     .transition(.move(edge: .bottom).combined(with: .opacity))
+                    .environment(\.customDismiss, CustomDismissAction(isPresented: $isPresented))
+                    .environment(\.customIsPresented, true)
             }
         }
         .animation(.snappy(duration: 0.3), value: isPresented)
         .ignoresSafeArea(.all, edges: .bottom)
+        .onChange(of: isPresented) { oldValue, newValue in
+            if oldValue && !newValue {
+                dismiss?()
+            }
+        }
     }
 }
 
 extension View {
     func customSheet<SheetContent>(
         isPresented: Binding<Bool>,
+        onDismiss: (() -> Void)? = nil,
         @ViewBuilder sheetContent: @escaping () -> SheetContent
     ) -> some View where SheetContent: View {
         modifier(
             CustomSheet(
                 isPresented: isPresented,
+                onDismiss: onDismiss,
                 sheetContent: sheetContent
             )
         )
