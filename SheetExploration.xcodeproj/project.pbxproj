@@ -11,6 +11,8 @@
 		5A4F79E72BBF90BE00D4E870 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4F79E62BBF90BE00D4E870 /* ContentView.swift */; };
 		5A4F79E92BBF90BF00D4E870 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A4F79E82BBF90BF00D4E870 /* Assets.xcassets */; };
 		5A4F79EC2BBF90BF00D4E870 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A4F79EB2BBF90BF00D4E870 /* Preview Assets.xcassets */; };
+		5A4F79F32BC04EEE00D4E870 /* CustomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4F79F22BC04EEE00D4E870 /* CustomSheet.swift */; };
+		5A4F79F52BC04F2B00D4E870 /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4F79F42BC04F2B00D4E870 /* MathUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,9 @@
 		5A4F79E62BBF90BE00D4E870 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5A4F79E82BBF90BF00D4E870 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A4F79EB2BBF90BF00D4E870 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5A4F79F22BC04EEE00D4E870 /* CustomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSheet.swift; sourceTree = "<group>"; };
+		5A4F79F42BC04F2B00D4E870 /* MathUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathUtils.swift; sourceTree = "<group>"; };
+		5A4F79F62BC04F4200D4E870 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +40,7 @@
 		5A4F79D82BBF90BE00D4E870 = {
 			isa = PBXGroup;
 			children = (
+				5A4F79F62BC04F4200D4E870 /* README.md */,
 				5A4F79E32BBF90BE00D4E870 /* SheetExploration */,
 				5A4F79E22BBF90BE00D4E870 /* Products */,
 			);
@@ -51,8 +57,10 @@
 		5A4F79E32BBF90BE00D4E870 /* SheetExploration */ = {
 			isa = PBXGroup;
 			children = (
+				5A4F79F22BC04EEE00D4E870 /* CustomSheet.swift */,
 				5A4F79E42BBF90BE00D4E870 /* SheetExplorationApp.swift */,
 				5A4F79E62BBF90BE00D4E870 /* ContentView.swift */,
+				5A4F79F42BC04F2B00D4E870 /* MathUtils.swift */,
 				5A4F79E82BBF90BF00D4E870 /* Assets.xcassets */,
 				5A4F79EA2BBF90BF00D4E870 /* Preview Content */,
 			);
@@ -138,7 +146,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A4F79E72BBF90BE00D4E870 /* ContentView.swift in Sources */,
+				5A4F79F52BC04F2B00D4E870 /* MathUtils.swift in Sources */,
 				5A4F79E52BBF90BE00D4E870 /* SheetExplorationApp.swift in Sources */,
+				5A4F79F32BC04EEE00D4E870 /* CustomSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
