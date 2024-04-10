@@ -16,10 +16,10 @@ private struct DismissCustomSheetKey: EnvironmentKey {
 }
 
 public struct CustomDismissAction {
-    var isPresented: Binding<Bool>? = nil
+    var dismiss: (() -> Void)?
     
     func callAsFunction() {
-        isPresented?.wrappedValue = false
+        dismiss?()
     }
 }
 

@@ -43,9 +43,15 @@ struct InnerView: View {
     }
 }
 
+struct Item: Identifiable {
+    var id: UUID
+}
+
 struct ContentView: View {
     @State var isPresented: Bool = true
-    
+    @State var item: Item? = nil
+    @State var item2: Item? = nil
+
     var body: some View {
         ScrollView {
             VStack {
@@ -53,20 +59,44 @@ struct ContentView: View {
                     .imageScale(.large)
                     .foregroundStyle(.tint)
                 Text("Hello, world!")
+                Button("Present Custom Sheet") {
+                    isPresented = true
+                    item = Item(id: UUID())
+                } 
                 Button("Present Sheet") {
                     isPresented = true
+                    item2 = Item(id: UUID())
                 }
             }
             .frame(maxWidth: .infinity)
             .padding()
         }
+        .sheet(item: $item2) { item in
+            VStack {
+                Button {
+                    self.item = Item(id: UUID())
+                } label: {
+                    Text("\(item.id)")
+                }
+                InnerView()
+            }
+            .presentationDetents([.medium])
+            .presentationCornerRadius(50)
+        }
         .customSheet(
-            isPresented: $isPresented,
+            item: $item,
             onDismiss: {
                 print("Custom sheet dismissed")
             }
-        ) {
-            InnerView()
+        ) { item in
+            VStack {
+                Button {
+                    self.item = Item(id: UUID())
+                } label: {
+                    Text("\(item.id)")
+                }
+                InnerView()
+            }
         }
     }
 }
